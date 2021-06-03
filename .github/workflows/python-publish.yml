@@ -21,32 +21,30 @@ jobs:
       - name: Run a one-line script
         run: echo Hello, world!
         
-      - name: test
-        run: git config --global user.email "test@example.com"
-      - name: test
-        run: git config --global user.name "test Name"
-      - name: test
-        run: git remote remove origin
-      - name: test
-        run: git remote add origin https://LS-ELLO:dpffhrkwhgdk0@github.com/LS-ELLO/code-review-test
-      - name: test
-        run: git remote set-url origin https://github.com/LS-ELLO/code-review-test.git
-        
-      - name: test
-        run: git checkout --orphan review-target
-      - name: test
-        run: git commit --allow-empty -m "Empty Commit"
-      - name: test
-        run: git push review-target
-      - name: test
-        run: git checkout main
-      - name: test
-        run: git checkout -b review
-      - name: test
-        run: git rebase -i review-target
-      - name: test
-        run: git push review
+      # Create Branch
+      - name: Create Branch GitHub Action
+        uses: peterjgrainger/action-create-branch@v2.0.1
+        env:
+          GITHUB_TOKEN: ${{ secrets.REVIEW }}
+        with:
+          branch: 'review-target'
 
+      # Create Branch
+      - name: Create Branch GitHub Actionhttps://codeshare.io/login
+        uses: peterjgrainger/action-create-branch@v2.0.1
+        env:
+          GITHUB_TOKEN: ${{ secrets.REVIEW }}
+        with:
+          branch: 'review'
+          
+      # git checkout branch 
+      - uses: actions/checkout@v2
+        with:
+          ref: review
+          
+      - name: Update README File
+        run: | 
+          echo First > README.md
           
       - name: Install Requirements
         run: |
@@ -66,4 +64,3 @@ jobs:
           name: pylint report
           path: pylint.txt
        
-
