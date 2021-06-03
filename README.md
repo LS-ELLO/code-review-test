@@ -1,5 +1,7 @@
 # code-review-test
 
+<img src="https://blog.kshgroup.kr/content/images/2020/04/review.png">
+
 ## 1) 코드리뷰 브랜치 아키텍쳐 자동화
 https://blog.kshgroup.kr/code-reviews-for-existing-code-with-github/
 
