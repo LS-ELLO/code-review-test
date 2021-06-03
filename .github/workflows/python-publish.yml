@@ -45,10 +45,6 @@ jobs:
         with:
           ref: review
           
-      - name: Update README File
-        run: | 
-          echo First > README.md
-          
       - name: Install Requirements
         run: |
           python -m pip install --upgrade pip
