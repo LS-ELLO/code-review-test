@@ -21,30 +21,21 @@ jobs:
       - name: Run a one-line script
         run: echo Hello, world!
         
-      # Create Branch
-      - name: Create Branch GitHub Action
-        uses: peterjgrainger/action-create-branch@v2.0.1
-        env:
-          GITHUB_TOKEN: ${{ secrets.REVIEW }}
-        with:
-          branch: 'review-target'
+      - name: test
+        run: git checkout --orphan review-target
+      - name: test
+        run: git commit --allow-empty -m "Empty Commit"
+      - name: test
+        run: git push -u origin review-target
+      - name: test
+        run: git checkout master
+      - name: test
+        run: git checkout -b review
+      - name: test
+        run: git rebase -i review-target
+      - name: test
+        run: git push -u origin review
 
-      # Create Branch
-      - name: Create Branch GitHub Action
-        uses: peterjgrainger/action-create-branch@v2.0.1
-        env:
-          GITHUB_TOKEN: ${{ secrets.REVIEW }}
-        with:
-          branch: 'review'
-          
-      # git checkout branch 
-      - uses: actions/checkout@v2
-        with:
-          ref: review
-          
-      - name: Update README File
-        run: | 
-          echo First > README.md
           
       - name: Install Requirements
         run: |
