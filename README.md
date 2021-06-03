@@ -4,6 +4,8 @@
 - `review-target`은 빈 브랜치로 생성
 - rebase를 이용해서 `review`브랜치와 `review-target`브랜치를 병합(not merge)
 
+-----------------
+
 ## 1) 코드리뷰 브랜치 아키텍쳐 자동화
 https://blog.kshgroup.kr/code-reviews-for-existing-code-with-github/
 
