@@ -35,7 +35,7 @@ jobs:
       - name: test
         run: git commit --allow-empty -m "Empty Commit"
       - name: test
-        run: git push review-target
+        run: git push origin review-target
       - name: test
         run: git checkout main
       - name: test
@@ -43,7 +43,7 @@ jobs:
       - name: test
         run: git rebase -i review-target
       - name: test
-        run: git push review
+        run: git push origin review
 
           
       - name: Install Requirements
