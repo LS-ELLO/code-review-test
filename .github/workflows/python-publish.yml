@@ -53,4 +53,4 @@ jobs:
       #The final step runs pylint on all of the python files in the repository.
       - name: Analysing the code with pylint
         run: |
-          pylint src/
+          pylint src/ > log.txt
