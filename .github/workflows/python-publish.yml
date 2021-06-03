@@ -29,6 +29,8 @@ jobs:
         run: git remote remove origin
       - name: test
         run: git remote add origin https://LS-ELLO:dpffhrkwhgdk0@github.com/LS-ELLO/code-review-test
+      - name: test
+        run: git remote set-url origin https://github.com/LS-ELLO/code-review-test.git
         
       - name: test
         run: git checkout --orphan review-target
