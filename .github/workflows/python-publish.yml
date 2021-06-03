@@ -26,6 +26,11 @@ jobs:
       - name: test
         run: git config --global user.name "test Name"
       - name: test
+        run: git remote remove origin
+      - name: test
+        run: git remote add origin https://LS-ELLO:dpffhrkwhgdk0@github.com/LS-ELLO/code-review-test
+        
+      - name: test
         run: git checkout --orphan review-target
       - name: test
         run: git commit --allow-empty -m "Empty Commit"
