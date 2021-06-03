@@ -32,7 +32,7 @@ jobs:
       - name: test
         run: git push -u origin review-target
       - name: test
-        run: git checkout master
+        run: git checkout main
       - name: test
         run: git checkout -b review
       - name: test
