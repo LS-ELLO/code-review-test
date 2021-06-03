@@ -42,9 +42,9 @@ jobs:
         with:
           ref: review
           
-      - name: Create README File
+      - name: Update README File
         run: | 
-          echo First > other.txt
+          echo First > README.md
           
       - name: Install Requirements
         run: |
