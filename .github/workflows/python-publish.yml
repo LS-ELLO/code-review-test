@@ -51,6 +51,8 @@ jobs:
           python -m pip install --upgrade pip
           pip install pylint
                  
+      # tee 는 표준 입력(standard input)에서 읽어서 표준 출력(standard output) 과 파일에 쓰는 명령어입니다. (https://www.lesstif.com/lpt/linux-tee-89556049.html)
+      # 규식이형 사용
       - name: Analysing the code with pylint
         run: |
           python -m pylint --fail-under=10 `find -regextype egrep -regex '(.*.py)$'` |
