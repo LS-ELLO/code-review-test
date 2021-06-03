@@ -20,6 +20,14 @@ jobs:
       # Runs a single command using the runners shell
       - name: Run a one-line script
         run: echo Hello, world!
+        
+      # Create Branch
+      - name: Create Branch GitHub Action
+        uses: peterjgrainger/action-create-branch@v2.0.1
+        env:
+          GITHUB_TOKEN: ${{ secrets.REVIEW }}
+        with:
+          branch: 'review-target'
 
       # Create Branch
       - name: Create Branch GitHub Action
@@ -27,12 +35,12 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.REVIEW }}
         with:
-          branch: 'code-review-branch'
+          branch: 'review'
           
       # git checkout branch 
       - uses: actions/checkout@v2
         with:
-          ref: code-review-branch
+          ref: review
           
       - name: Install Requirements
         run: |
