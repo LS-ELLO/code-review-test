@@ -4,3 +4,5 @@
 https://blog.kshgroup.kr/code-reviews-for-existing-code-with-github/
 
 ## 2) 커밋 시, 리뷰 브랜치를 자동으로 생성 후 lint 적용 점수 도출
+
+## 3) lint점수 이슈탭 업로드 또는 txt파일 도출
